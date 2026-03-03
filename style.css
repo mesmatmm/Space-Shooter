@@ -1,0 +1,202 @@
+/* ============================================================
+   Star Assault — style.css
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ── Game wrapper ───────────────────────────────────────────── */
+#game-wrapper {
+  position: relative;
+  width: 480px;
+  height: 720px;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* ── Overlays ───────────────────────────────────────────────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: rgba(0, 0, 10, 0.88);
+  z-index: 10;
+  padding: 24px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+.game-title {
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  letter-spacing: 0.2em;
+  color: #00e5ff;
+  text-shadow: 0 0 18px #00e5ff, 0 0 40px #0077ff;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  max-width: 320px;
+}
+
+.gameover-title {
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  letter-spacing: 0.15em;
+  color: #ff4444;
+  text-shadow: 0 0 16px #ff2200;
+}
+
+.score-final {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.score-best {
+  font-size: 1rem;
+  color: #ffcc00;
+}
+
+.high-score-display {
+  font-size: 0.85rem;
+  color: #ffcc00;
+}
+
+/* ── Controls hint ──────────────────────────────────────────── */
+.controls-hint {
+  display: flex;
+  gap: 24px;
+  font-size: 0.78rem;
+  color: #88ccff;
+  border: 1px solid #224;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background: rgba(0,50,100,0.3);
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn {
+  padding: 12px 36px;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  min-width: 160px;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: #00aaff;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 16px #00aaff88;
+}
+
+.btn-primary:hover {
+  background: #33bbff;
+  box-shadow: 0 0 24px #00aaff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #88ccff;
+  border: 1px solid #336688;
+}
+
+.btn-secondary:hover {
+  background: rgba(0,100,180,0.2);
+}
+
+/* ── HUD ────────────────────────────────────────────────────── */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.55);
+  font-size: 0.82rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#hud.hidden {
+  display: none;
+}
+
+#hud-left, #hud-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+#hud-lives {
+  color: #ff6688;
+  letter-spacing: 4px;
+}
+
+#hud-music-toggle {
+  pointer-events: all;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#hud-music-toggle:hover {
+  opacity: 1;
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 18px #00e5ff, 0 0 40px #0077ff; }
+  50%       { text-shadow: 0 0 28px #00e5ff, 0 0 60px #0055ff; }
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 500px) {
+  #game-wrapper {
+    width: 100vw;
+    height: 100dvh;
+  }
+}

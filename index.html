@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Assault — Space Shooter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="overlay">
+      <h1 class="game-title">STAR ASSAULT</h1>
+      <p class="subtitle">Defend the galaxy from endless waves of enemies</p>
+      <div class="controls-hint">
+        <span>← → Move</span>
+        <span>Space / Tap — Shoot</span>
+      </div>
+      <button id="btn-play" class="btn btn-primary">▶ Play</button>
+      <button id="btn-music" class="btn btn-secondary">🎵 Music: ON</button>
+      <p class="high-score-display">High Score: <span id="hs-display">0</span></p>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="overlay hidden">
+      <h2 class="gameover-title">GAME OVER</h2>
+      <p class="score-final">Score: <span id="final-score">0</span></p>
+      <p class="score-best">Best: <span id="final-hs">0</span></p>
+      <button id="btn-retry" class="btn btn-primary">↺ Retry</button>
+      <button id="btn-menu" class="btn btn-secondary">☰ Menu</button>
+    </div>
+
+    <!-- HUD (shown during play) -->
+    <div id="hud" class="hidden">
+      <div id="hud-left">
+        <span id="hud-score">Score: 0</span>
+        <span id="hud-level">Level: 1</span>
+      </div>
+      <div id="hud-right">
+        <span id="hud-lives">❤ ❤ ❤</span>
+        <button id="hud-music-toggle" title="Toggle music">🎵</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
