@@ -1,4 +1,4 @@
-# Star Assault — Space Shooter
+# Star War — Space Shooter
 
 A browser-based space shooter game built with vanilla JavaScript and the HTML5 Canvas API. No external dependencies or build tools required.
 
