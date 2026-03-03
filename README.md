@@ -4,7 +4,9 @@ A browser-based space shooter game built with vanilla JavaScript and the HTML5 C
 
 ## Demo
 
-Open `index.html` in any modern browser to play instantly.
+**[Play Live on GitHub Pages](https://mesmatmm.github.io/Space-Shooter/)**
+
+Or open `index.html` in any modern browser to play locally.
 
 ## Gameplay
 
